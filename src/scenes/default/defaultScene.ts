@@ -2,17 +2,13 @@ import {
   Color4,
   Scene,
 } from "@babylonjs/core";
-import { canvas } from "../../domItems";
 import { createCamera } from "../../elements/cameras/camera";
 import { createCube } from "../../elements/cube";
 import { createGround } from "../../elements/ground";
 import { createLight } from "../../elements/lights/light";
-import { engine } from "../../engine";
 
-export const defaultScene = makedefaultScene(canvas);
 
-function makedefaultScene(canvas: HTMLCanvasElement): Scene {
-  const scene = new Scene(engine);
+export function populateDefaultScene(scene: Scene ,canvas: HTMLCanvasElement): Scene {
   createCamera(scene, canvas);
   createLight(scene);
   createGround(scene, 4)
@@ -26,3 +22,4 @@ function makedefaultScene(canvas: HTMLCanvasElement): Scene {
 function createBackground(scene: Scene): void {
   scene.clearColor = Color4.FromHexString("#9384ca");
 }
+ 

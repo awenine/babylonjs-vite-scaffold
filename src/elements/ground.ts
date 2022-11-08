@@ -1,4 +1,4 @@
-import { Mesh, MeshBuilder } from "@babylonjs/core";
+import { Mesh, MeshBuilder, PhysicsImpostor } from "@babylonjs/core";
 
 export function createGround(scene, size): Mesh {
   const ground = MeshBuilder.CreateGround(
@@ -10,15 +10,15 @@ export function createGround(scene, size): Mesh {
     scene
   );
 
-  // ground.physicsImpostor = new PhysicsImpostor(
-  //   ground,
-  //   PhysicsImpostor.BoxImpostor,
-  //   {
-  //     mass: 0,
-  //     restitution: 0.9,
-  //   },
-  //   scene
-  // );
+  ground.physicsImpostor = new PhysicsImpostor(
+    ground,
+    PhysicsImpostor.BoxImpostor,
+    {
+      mass: 0,
+      restitution: 0.9,
+    },
+    scene
+  );
 
   return ground;
 }
