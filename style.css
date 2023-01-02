@@ -3,9 +3,16 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  /* this is set up to give a smaller, fixed proportion canvas */
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+
 }
 
 #renderCanvas {
-  width: 100%;
-  height: 100%;
+  margin-top: 5vh;
+  width: 80vw;
+  height: 40vw;
 }
